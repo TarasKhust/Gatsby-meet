@@ -1,5 +1,11 @@
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
+import styled from 'styled-components';
+
+const HeaderWrapper = styled.div `
+  background: tomato;
+  margin-bottom: 1.45em;
+`
 
 const LISTING_QUERY = graphql`
 	query BlogPostListing {
@@ -26,6 +32,7 @@ const Listing = () => (
 				query={LISTING_QUERY}
 				render={({allMarkdownRemark}) => (
 					allMarkdownRemark.edges.map(({node}) => (
+							<HeaderWrapper>
 							<article key={node.frontmatter.slug}>
 								<Link to={`/posts${node.frontmatter.slug}`}>
 									<h2>{node.frontmatter.title}</h2>
@@ -34,6 +41,7 @@ const Listing = () => (
 								<p>{node.excerpt}</p>
 								<Link to={`/posts${node.frontmatter.slug}`}>Read More</Link>
 							</article>
+							</HeaderWrapper>
 					))
 				)}
 		/>
