@@ -16,7 +16,7 @@ const Main = styled.main`
     list-style: none;
 `;
 
-const Layout = ({ children }) => (
+const Layout = ({ children, location }) => (
 		<StaticQuery
 				query={graphql`
       query SiteTitleQuery {
@@ -39,7 +39,9 @@ const Layout = ({ children }) => (
 				render={data => (
 						<>
 							<Header siteTitle={data.site.siteMetadata.title}/>
+							{location.pathname === '/' &&
 							<Img fluid={data.file.childImageSharp.fluid}/>
+							}
 							<Main>
 								<main>{children}
 									<Archive/>
