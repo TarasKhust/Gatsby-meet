@@ -3,6 +3,7 @@ module.exports = {
     title: `Gatsby Default Starter`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
+    siteUrl: 'https://blissful-kalam-c88569.netlify.com/'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -47,7 +48,9 @@ module.exports = {
     },
       'gatsby-transformer-remark',
       'gatsby-plugin-netlify',
-      `gatsby-plugin-netlify-cms`
+      `gatsby-plugin-netlify-cms`,
+      `gatsby-plugin-sitemap`,
+      `gatsby-plugin-offline`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`
